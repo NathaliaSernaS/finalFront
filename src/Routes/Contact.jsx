@@ -3,12 +3,12 @@ import Form from '../Components/Form'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-const Contact = () => {
+ const Contact = () => {
   return (
-    <div>
-      <h2>Want to know more?</h2>
-      <p>Send us your questions and we will contact you</p>
-      <Form/>
+    <div className="u-margin-bottom-medium">
+    <h2 className="heading-secundary">¿Quieres saber más?</h2>
+    <h3>Envíanos tus consultas y nos pondremos en contacto contigo</h3>
+    <Form />
     </div>
   )
 }
