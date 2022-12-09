@@ -5,12 +5,12 @@ import Navbar from "./Components/Navbar";
 import Contact from './Routes/Contact';
 import Detail from './Routes/Detail';
 import Favs from './Routes/Favs';
-import { DentistProvider } from './Context/DentistContext';
+import { ContextProvider} from './Components/utils/GLobalContext';
 
 
 function App() {
   return (
-    <DentistProvider>
+    <ContextProvider>
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
@@ -19,7 +19,7 @@ function App() {
       <Route path="/favs"  element={<Favs />} />
     </Routes>
     <Footer />
-  </DentistProvider>
+  </ContextProvider>
    
   );
 }

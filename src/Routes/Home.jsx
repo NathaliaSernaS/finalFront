@@ -1,12 +1,12 @@
 import React from 'react'
 import { useContext } from 'react'
 import Card from '../Components/Card'
-import { DentistContext }from '../Context/DentistContext'
+import { GlobalContext }from '../Components/utils/GLobalContext'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const dentists = useContext(DentistContext)
+  const { dentists } = useContext(GlobalContext)
   
   return (
     <main className="" >
