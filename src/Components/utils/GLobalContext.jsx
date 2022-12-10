@@ -53,7 +53,9 @@ export const ContextProvider = ({ children }) => {
   
   return (
     <GlobalContext.Provider value={providerState}>
-      {children}
+      <div className ={providerState.theme}>
+        {children}
+      </div>
     </GlobalContext.Provider>
   );
 };

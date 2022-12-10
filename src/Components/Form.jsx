@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
+import { GlobalContext } from './utils/GLobalContext'
 
 const Form = () => {
   const [isNameValid, setNameIsValid] = useState(false);
@@ -7,7 +7,7 @@ const Form = () => {
   const [nameMessage, setNameMessage] = useState("");
   const [emailMessage, setEmailMessage] = useState("");
   const [formData, setformData] = useState({ name: "", email: "" });
-  //Aqui deberan implementar el form completo con sus validaciones
+  const { theme } = useContext(GlobalContext)
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -34,10 +34,9 @@ const Form = () => {
     setformData({ ...formData, [name]: value });
   }
 
-  //Aqui deberan implementar el form completo con sus validaciones
 
   return (
-    <div >
+    <div className={`form form-${theme}`}>
       <form action="#" onSubmit={onSubmit}>
         <label htmlFor="name" >
           Nombre Completo
@@ -50,9 +49,9 @@ const Form = () => {
           placeholder="Nombre Completo"
           required
           />
-          <span style={{ color: 'red'}}>{nameMessage}</span>
+          <span style={{ color: 'red', fontSize: '12px' }}>{nameMessage}</span>
         <label htmlFor="email" >
-          Correo Electronico
+          Correo Electrónico
         </label>
         <input
           name="email"
@@ -62,7 +61,7 @@ const Form = () => {
           onChange={onChange}
           required
         />
-         <span style={{ color: 'red'}}>{emailMessage}</span>
+         <span style={{ color: 'red', fontSize: '12px'}}>{emailMessage}</span>
         <button type="submit" >
           Enviar
         </button>

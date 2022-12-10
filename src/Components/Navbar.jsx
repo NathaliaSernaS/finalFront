@@ -1,23 +1,27 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {NavLink} from 'react-router-dom'
+import { GlobalContext } from './utils/GLobalContext';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
+  const {theme, setLightTheme, setDarkTheme} = useContext(GlobalContext);
+  const isLightTheme = theme === "light";
+
+  const changeTheme = () =>{
+    if(isLightTheme){
+      setDarkTheme();
+    }else {
+      setLightTheme();
+    }
+  }
 
   return (
-    <nav>
-      <ul>
-        
+    <nav className= {theme}>
           <NavLink to="/">Home</NavLink>
           <NavLink to='/contacto'>Contacto</NavLink>
           <NavLink to='/favs'>Favoritos</NavLink>
-      
-        
-      </ul>
-     
-      {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button>Change theme</button>
+      <button className= {`navbar-btn navbar-btn-${theme}`} onClick={changeTheme}>Change theme</button>
     </nav>
   )
 }

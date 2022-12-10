@@ -23,31 +23,52 @@ h1{
   text-align: center;
 }
 
-nav{
+nav {
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.244);
+  width: 100vw;
+  justify-content: space-around;
   padding: 1rem;
+  font-weight: 900;
 }
+
+.navbar-btn {
+  border-radius: 16px;
+  padding: 0.5rem;
+  background-color: rgba(119, 197, 226, 0.278);
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.navbar-btn-dark {
+  background-color: rgba(119, 197, 226, 0.278);
+  color: white;
+}
+
+
 
 a{
   color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
+  font-weight: 500;
 }
+
 a:hover{
-  color: rgb(136, 136, 136);
+  color: rgb(32, 179, 233);
 } 
 
 footer {
   display: flex;
+  color: #000;
   justify-content: center;
   text-align: center;
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
+  width: 100%;
   height: 40px;
   margin-top: 2rem;
 }
@@ -61,13 +82,50 @@ footer > p{
   padding-top: 0.7rem;
 }
 
+.footer-dark {
+  background-color: #12121296;
+  color: white;
+}
+
 form{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 300px;
-  height: 100px;
+  height: 230px;
   margin: 0 auto;
+}
+
+form > label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+form > input {
+  padding: 0.5rem;
+  border-radius: 16px;
+}
+
+form > button {
+  padding: 0.8rem;
+  margin: 10px auto;
+  width: 50%;
+  border-radius: 32px;
+  background-color: rgb(32, 179, 233);
+  color: white;
+  font-weight: 800;
+}
+form > button:hover {
+  background-color: rgb(220, 220, 220);
+  color: black;
+  cursor: pointer;
+}
+
+.form {
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 3rem;
+  background-color: #12121296;
+  color: rgb(32, 179, 233);
 }
 
 .card{
@@ -77,11 +135,46 @@ form{
   align-items: center;
   width: 200px;
   padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+  border: 2px solid rgb(165, 165, 165);
+  border-radius: 20px;
 }
 
 .card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+  border: 2px solid rgb(32, 179, 233);
+  
+}
+
+.card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-link > img {
+  border-radius: 120px;
+  width: 210px;
+  height: 230px;
+}
+
+.card-link-dark > span {
+  padding: 0.3rem;
+  color: white;
+}
+
+.card-link > span {
+  padding: 0.3rem;
+}
+
+.card > button {
+  background: none;
+  border-top: 1px solid rgb(234, 234, 234);
+  width: 110%;
+  border-radius: 20px;
+}
+
+.card > button:hover {
+  background: rgba(171, 233, 255, 0.547);
+ 
 }
 
 .card-grid{
@@ -119,4 +212,34 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: 10% auto;
+  border: 1px solid #ccc;
+  border-radius: 60px;
+  padding: 1rem;
+}
+
+.detail > img {
+  border-radius: 120px;
+  width: 210px;
+  height: 230px;
+}
+
+.detail > span {
+  margin: 1rem;
+  font-weight: 500;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

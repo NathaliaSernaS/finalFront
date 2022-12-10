@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { setFavorites } from '../Components/utils/LocalStorage'
+import { GlobalContext } from "../Components/utils/GLobalContext"
+import { useContext } from "react";
 
 const Card = ({ name, username, id }) => {
+  const { theme} = useContext(GlobalContext);
  
 
   const addFav = ()=>{
@@ -12,12 +15,12 @@ const Card = ({ name, username, id }) => {
 
   return (
   <div className="card" >
-    <Link to={`/dentist/${id}`} >
-      <img style={{ width: '210px', height: '230px'}} src="./images/doctor.jpg" alt="Imagen del dentista" />
+    <Link className = {`card-link card-link-${theme}`}to={`/dentist/${id}`} >
+      <img src="./images/doctor.jpg" alt="Imagen del dentista" />
       <span>{name}</span>
       <span>{username}</span>
     </Link>
-    <button onClick={addFav} className="favButton">Add fav</button>
+    <button onClick={addFav} className="favButton">⭐</button>
   </div>
   );
 };
